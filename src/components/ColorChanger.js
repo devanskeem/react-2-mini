@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class ColorChanger extends Component {
-  render() {
-    return (
-      <select className="dropDownContainer">
-        <option value="black"> Black </option>
-        <option value="blue"> Blue </option>
-        <option value="green"> Green </option>
-      </select>
-    );
-  }
-}
+const ColorChanger = (props) => (
+  <select className="dropDownContainer" onChange={(e) => props.update(e.target.value)} disabled={props.allowEdit ===false}>
+    <option value="black"> Black </option>
+    <option value="blue"> Blue </option>
+    <option value="green"> Green </option>
+  </select>
+)
+export default ColorChanger
